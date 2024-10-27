@@ -37,7 +37,7 @@ body {
 
 
 .logo img{  
-  max-width: auto;
+  max-width: 100px;
   height: 50px;
   padding: 0;
 }
@@ -235,7 +235,6 @@ section {
 .work:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .work h3 {
@@ -411,22 +410,21 @@ section {
   background-color: #000000;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 #backToTop {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  bottom: 100px; /* 20px from the bottom */
-  right: 50px; /* 20px from the right */
-  z-index: 100; /* Make sure it doesn't overlap */
-  background-color: #000000; /* Button background */
-  color: white; /* Text color */
-  border: none; /* No border */
-  padding: 15px; /* Padding */
-  border-radius: 25px; /* Rounded corners */
-  font-size: 18px; /* Font size */
-  cursor: pointer; /* Pointer on hover */
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 50px;
+  z-index: 100;
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -512,7 +510,7 @@ footer p {
     }
 
     main.menu-active {
-        margin-top: 200px; /* Adjust based on your navbar height + menu height */
+        margin-top: 200px;
     }
 
   .skill-box,
