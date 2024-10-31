@@ -16,8 +16,8 @@
           <span></span>
         </div>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="main.html#skills">Skills</a></li>
           <li><a class="active" href="#my-work">My Work</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -69,7 +69,36 @@
     <footer>
         <p>© 2023. All Rights Reserved.</p>
     </footer>
-    <script src="script.js">        
+    <script> 
+    document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const mainContent = document.querySelector("main");
+
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    mainContent.classList.toggle("menu-active");
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll(".nav-links li").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+      mainContent.classList.remove("menu-active");
+    });
+  });
+
+  // Close menu when clicking outside of it
+  document.addEventListener("click", function (event) {
+    if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+      mainContent.classList.remove("menu-active");
+    }
+  });
+});       
     </script>
   </body>
 </html>
