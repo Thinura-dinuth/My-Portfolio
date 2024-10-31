@@ -164,6 +164,7 @@ h2.no-stars::after {
   font-size: 20px;
   margin-bottom: 30px;
   color: #666;
+  background: transparent;
 }
 
 .social-media ul {
@@ -178,8 +179,8 @@ h2.no-stars::after {
 }
 
 .social-media a img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -203,11 +204,20 @@ h2.no-stars::after {
 }
 
 /* Skills Section */
-.skills {
+.about-me {
   background-color: #f9f9f9;
 }
 
-.skills h2 {
+.description{
+  display: flex;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  font-size: 20px;
+  color: #666;
+}
+
+.about-me h2 {
   font-size: 48px;
   margin-bottom: 40px;
   text-align: center;
@@ -233,6 +243,12 @@ h2::after {
   top: -5px;
 }
 
+h3{
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
 .skill-container {
   display: flex;
   flex-wrap: wrap;
@@ -243,10 +259,10 @@ h2::after {
 }
 
 .skill-box {
-  flex: 0 1 calc(33.333% - 30px);
+  flex: 0 1 calc(25% - 20px);
   padding: 30px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 10px ;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -602,7 +618,7 @@ footer p {
     justify-content: center;
   }
 
-  .skills h2,
+  .about-me h2,
   .my-work h2,
   .contact h2 {
     font-size: 36px;

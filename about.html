@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thinura Jayathunga - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo"><img src="Pictures/logo.png"></div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="main.html">Home</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="projects.html">My Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="skills" class="about-me">
+        <h2>About Me</h2>
+        <div class="description">
+            <p>
+                A motivated and detail-oriented computer science
+                student with a strong foundation in IT solutions and hardware.
+                Certified in essential technical skills with a focus on delivering
+                efficient, practical solutions. Eager to apply knowledge in
+                real-world environments and contribute to dynamic, collaborative
+                teams. Committed to continuous learning and growth in the
+                ever-evolving tech landscape.
+            </p>
+        </div>
+        <h3>Skills</h3>
+        <div class="skill-container">
+            <div class="skill-box">
+                <img src="Pictures/html-5_5968267.png" alt="HTML" />
+                <h3>HTML</h3>
+            </div>
+            <div class="skill-box">
+                <img src="Pictures/css_919826.png" alt="CSS" />
+                <h3>CSS</h3>
+            </div>
+            <div class="skill-box">
+                <img src="Pictures/js_5968292.png" alt="JavaScript" />
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-box">
+                <img src="Pictures/science_13066132.png" alt="React" />
+                <h3>React</h3>
+            </div>
+            <div class="skill-box">
+                <img src="Pictures/java_919854.png" alt="Java" />
+                <h3>Java</h3>
+            </div>
+            <div class="skill-box">
+                <img src="Pictures/python_5968350.png" alt="Python" />
+                <h3>Python</h3>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>© 2023. All Rights Reserved.</p>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const mainContent = document.querySelector("main");
+
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+            mainContent.classList.toggle("menu-active");
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll(".nav-links li").forEach((link) => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+                mainContent.classList.remove("menu-active");
+            });
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener("click", function (event) {
+            if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+                hamburger.classList.remove("active");
+                navLinks.classList.remove("active");
+                mainContent.classList.remove("menu-active");
+            }
+        });
+    });
+</script>
+</body>
+</html>
