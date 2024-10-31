@@ -68,34 +68,34 @@
     </footer>
   </body>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const mainContent = document.querySelector("main");
+      document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const mainContent = document.querySelector("main");
 
-  hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-    mainContent.classList.toggle("menu-active");
-  });
+    hamburger.addEventListener("click", function () {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+      mainContent.classList.toggle("menu-active");
+    });
 
-  // Close menu when a link is clicked
-  document.querySelectorAll(".nav-links li").forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("active");
-      mainContent.classList.remove("menu-active");
+    // Close menu when a link is clicked
+    document.querySelectorAll(".nav-links li").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+        mainContent.classList.remove("menu-active");
+      });
+    });
+
+    // Close menu when clicking outside of it
+    document.addEventListener("click", function (event) {
+      if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+        mainContent.classList.remove("menu-active");
+      }
     });
   });
-
-  // Close menu when clicking outside of it
-  document.addEventListener("click", function (event) {
-    if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("active");
-      mainContent.classList.remove("menu-active");
-    }
-  });
-});
   </script>
 </html>
