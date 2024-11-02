@@ -1,4 +1,87 @@
 /* Global Styles */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Default style to make elements hidden initially */
+.slide-left,
+.slide-right,
+.slide-top,
+.slide-bottom,
+.fade-in{
+  opacity: 0;
+}
+
+/* Apply direction-specific animations */
+.slide-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.slide-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.slide-top {
+  animation: slideInTop 0.6s ease-out forwards;
+}
+
+.slide-bottom {
+  animation: slideInBottom 0.6s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
 @font-face {
   font-family: "Poppins";
   src: url(Poppins/Poppins-Regular.ttf);
@@ -88,7 +171,7 @@ a[class="active"]{
 }
 
 section {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,6 +349,7 @@ h3{
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
 }
 
 .skill-box:hover {
