@@ -9,7 +9,9 @@
   <body>
     <header>
       <nav class="navbar">
-        <div class="logo slide-top"><img src="Pictures/logo.png"/></div>
+        <div class="logo slide-top">
+          <img src="Pictures/logo.png" alt="logo" />
+        </div>
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -29,10 +31,10 @@
         <div class="home-content slide-left">
           <h1 class="greet emoji slide-top">Hello, It's Me</h1>
           <h2 class="name no-stars">Thinura Jayathunga</h2>
-          <div class="loader "><h1>Computer Science Undergraduate</h1></div>
+          <div class="loader"><h1>Undergraduate</h1></div>
           <p class="about-me slide-bottom">
-            A motivated and detail-oriented computer science
-            student with a strong foundation in IT solutions and hardware.
+            A motivated and detail-oriented computer science student with a
+            strong foundation in IT solutions and hardware.
           </p>
           <div class="social-media slide-bottom">
             <ul>
@@ -64,38 +66,41 @@
       </section>
     </main>
     <footer>
-      <p>© 2023. All Rights Reserved.</p>
+      <p>© 2024. All Rights Reserved.</p>
     </footer>
-  </body>
-  <script>
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const mainContent = document.querySelector("main");
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const mainContent = document.querySelector("main");
 
-    hamburger.addEventListener("click", function () {
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");
-      mainContent.classList.toggle("menu-active");
-    });
+        hamburger.addEventListener("click", function () {
+          hamburger.classList.toggle("active");
+          navLinks.classList.toggle("active");
+          mainContent.classList.toggle("menu-active");
+        });
 
-    // Close menu when a link is clicked
-    document.querySelectorAll(".nav-links li").forEach((link) => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-        mainContent.classList.remove("menu-active");
+        // Close menu when a link is clicked
+        document.querySelectorAll(".nav-links li").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+            mainContent.classList.remove("menu-active");
+          });
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener("click", function (event) {
+          if (
+            !hamburger.contains(event.target) &&
+            !navLinks.contains(event.target)
+          ) {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+            mainContent.classList.remove("menu-active");
+          }
+        });
       });
-    });
-
-    // Close menu when clicking outside of it
-    document.addEventListener("click", function (event) {
-      if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-        mainContent.classList.remove("menu-active");
-      }
-    });
-  });
-  </script>
+    </script>
+  </body>
 </html>
