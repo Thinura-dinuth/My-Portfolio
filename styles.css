@@ -89,12 +89,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  background-image: linear-gradient(
-    to top,
-    #fff1eb 0%,
-    #ace0f9 100%
-  ); /* Gradient */
+  scroll-behavior: smooth;  
 }
 
 body {
@@ -102,16 +97,18 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   line-height: 1.6;
   color: #565360;
+  background: #D7E2F2;
+  
 }
-
 /* Header and Navigation */
-.header {
+header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: transparent;
+  background-color:#D7E2F2 ; /* Add a background color to avoid content overlap */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
 }
 
 .navbar {
@@ -121,9 +118,7 @@ body {
   padding: 15px 5%;
   max-width: 1920px;
   margin: 0 auto;
-  background-color: transparent;
 }
-
 .logo img {
   max-width: 100px;
   height: 50px;
@@ -141,19 +136,9 @@ body {
   margin: 0 20px;
 }
 
-/* Structural selector & Child combinator */
-.nav-links li:first-child {
-  font-weight: bold;
-}
-
-/* Negation pseudo class */
-.nav-links li:not(:first-child) {
-  margin-left: 20px;
-}
-
 .nav-links a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #36393D;
   font-weight: 300;
   font-size: 18px;
   transition: color 0.5s ease, transform 1s ease-in-out; /* Transitions */
@@ -165,10 +150,9 @@ body {
   transform: translateY(-2px);
 }
 
-/*attribute Selector*/
-a[class="active"] {
-  color: #000;
-  font-weight: 800;
+.nav-links a.active {
+  color: #000000; /* Change to desired active color */
+  font-weight: 800; /* Make it bold */  
 }
 
 .hamburger {
@@ -212,7 +196,7 @@ section {
   font-size: 48px;
   font-weight: 300;
   margin-bottom: 10px;
-  color: #000000;
+  color: #3B3737;
 }
 
 .home-content .name {
@@ -228,7 +212,7 @@ section {
 
 .loader h1 {
   overflow: hidden;
-  border-right: 0.15em solid rgb(0, 0, 0);
+  border-right: 0.15em solid rgb(198, 196, 196);
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
@@ -250,7 +234,7 @@ section {
     border-color: transparent;
   }
   50% {
-    border-color: rgb(0, 0, 0);
+    border-color: rgb(221, 212, 212);
   }
 }
 
@@ -258,12 +242,6 @@ section {
 h1.emoji::after {
   content: "🤗";
   font-size: 32px;
-}
-
-/* Removed decorative element before & after the name */
-h2.no-stars::before,
-h2.no-stars::after {
-  content: "";
 }
 
 .home-content p {
@@ -311,10 +289,6 @@ h2.no-stars::after {
 }
 
 /* Skills Section */
-.about-me {
-  background-color: #f9f9f9;
-}
-
 .description {
   display: flex;
   text-align: center;
@@ -337,25 +311,6 @@ h2.no-stars::after {
   color: #333;
 }
 
-/* Pseudo-elements with generated content */
-/* Add a decorative element before main headings */
-h2::before {
-  content: " ★";
-  position: relative;
-  color: #000000;
-  font-size: 32px;
-  top: -5px;
-}
-
-/* Add a decorative element after main headings */
-h2::after {
-  content: " ★";
-  position: relative;
-  color: #000000;
-  font-size: 32px;
-  top: -5px;
-}
-
 h3 {
   font-size: 24px;
   margin-bottom: 25px;
@@ -371,15 +326,10 @@ h3 {
   margin: 0 auto;
 }
 
-/* Nth pseudo class */
-.skill-container .skill-box:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-
 .skill-box {
   flex: 0 1 calc(25% - 20px);
   padding: 30px;
-  background-color: white;
+  background-color: #DEE9FA;
   border-radius: 10px; /* Rounded corners */
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -424,7 +374,7 @@ h3 {
 .work {
   flex: 0 1 calc(33.333% - 30px);
   padding: 30px;
-  background-color: white;
+  background-color: #DEE9FA;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -453,7 +403,7 @@ h3 {
   display: inline-block;
   padding: 10px 20px;
   background-color: #000000;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -466,10 +416,6 @@ h3 {
 }
 
 /* Contact Section */
-.contact {
-  background-color: #f9f9f9;
-}
-
 .contact h2 {
   position: relative;
   font-size: 48px;
@@ -584,12 +530,6 @@ h3 {
   padding: 0 5px;
 }
 
-/*attribute Selector*/
-textarea[required] {
-  color: #000000;
-  font-style: italic;
-}
-
 .contact-form button {
   margin-top: 20px;
 }
@@ -620,6 +560,30 @@ textarea[required] {
   background-color: #000000;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop {
+  display: none;
+  position: fixed; 
+  bottom: 20px;
+  right: 20px;  
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 1000; /* Ensure the icon is above other elements */
+}
+
+#backToTop img {
+  filter: brightness(0.8); /* Optional: Add a slight darker filter */
+  transition: filter 0.3s; /* Smooth transition for filter */
+}
+
+#backToTop:hover img {
+  filter: brightness(1); /* Reset filter on hover */
+}
+
+#backToTop:hover {
+  transform:scale(1.1);
 }
 
 /* Footer */
@@ -684,14 +648,14 @@ footer p {
     top: 70px; /* Adjust based on your navbar height */
     gap: 0;
     flex-direction: column;
-    background-color: #000;
+    background-color: #D7E2F2;
     width: 100%;
     text-align: center;
     transition: 0.3s;
     z-index: 999;
   }
   .nav-links a {
-    color: white;
+    color: #36393D;
   }
 
   .nav-links.active {
@@ -726,7 +690,7 @@ footer p {
 
 @media (max-width: 480px) {
   .nav-links a {
-    color: white;
+    color: #36393D;
   }
 
   .home-content .greet {
